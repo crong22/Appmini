@@ -29,8 +29,14 @@ final class SearchViewController : UIViewController {
         return bar
     }()
     
+    // tableView
+    let tableView = UITableView()
+    
     // disposeBag
     let disposeBag = DisposeBag()
+    
+    // viewModel
+    let viewModel = SearchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,17 +52,27 @@ final class SearchViewController : UIViewController {
 
     
     private func bind() {
+        let input = SearchViewModel.Input(searchBarClick: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty)
+        let output = viewModel.transform(input: input)
         
-        searchBar.rx.searchButtonClicked
+        output.searchBarClick
             .withLatestFrom(searchBar.rx.text.orEmpty)
             .bind(with: self) { owner, text in
-                print("🍒 \(text)")
+                UserDefaults.standard.setValue(text, forKey: "record")
                 let vc = ListViewController()
                 vc.searchBar.text = text
                 vc.text = text
                 owner.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)
+        
+
+        output.recordList
+            .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.id, cellType: SearchTableViewCell.self)) {(row, element,cell) in
+                cell.titleLabel.text = element
+            }
+            .disposed(by: disposeBag)
+
     }
     
     private func configureUI() {
@@ -74,6 +90,15 @@ final class SearchViewController : UIViewController {
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
 
+        }
+        
+        view.addSubview(tableView)
+        tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.id)
+        tableView.rowHeight = 40
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).offset(10)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
         }
     }
 }

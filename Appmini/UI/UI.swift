@@ -21,4 +21,6 @@ class TextFont {
     static var musicFont : UIFont = .systemFont(ofSize: 17, weight: .bold)
     // 가수폰트
     static var artistFont : UIFont = .systemFont(ofSize: 15, weight: .regular)
+    // 검색기록폰트
+    static var recordFont : UIFont = .systemFont(ofSize: 14, weight: .regular)
 }

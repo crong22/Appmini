@@ -23,12 +23,12 @@ class ListViewModel {
         var musicList : Observable<[Result]>
     }
     
-    func transform(inptut : Input) -> Output {
+    func transform(input : Input) -> Output {
         let musicTotalList = PublishSubject<[Result]>()
         
-        inptut.searchBarButton
+        input.searchBarButton
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
-            .withLatestFrom(inptut.searchBarText)
+            .withLatestFrom(input.searchBarText)
             .distinctUntilChanged()
             .flatMap { value in
                 NetworkManager.shared.callRequest(item: value)
@@ -44,7 +44,7 @@ class ListViewModel {
             }
             .disposed(by: disposeBag)
         
-        inptut.searchBarText
+        input.searchBarText
             .take(1)
             .flatMap { value in
                 NetworkManager.shared.callRequest(item: value)
@@ -61,7 +61,7 @@ class ListViewModel {
             .disposed(by: disposeBag)
     
 
-        return Output(searchBarButton: inptut.searchBarButton, musicList: musicTotalList)
+        return Output(searchBarButton: input.searchBarButton, musicList: musicTotalList)
     }
 }
 

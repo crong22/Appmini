@@ -44,9 +44,8 @@ class NetworkManager {
                     return
                 }
                 if let data = data, let appData = try? JSONDecoder().decode(Music.self, from: data) {
-                    print("appData \(appData)")
+//                    print("appData \(appData)")
                     observer.onNext(appData)
-                    print(appData)
                     observer.onCompleted()
                 }else {
                     print("응답은 왔으나 디코딩 실패")
@@ -57,7 +56,7 @@ class NetworkManager {
             
             return Disposables.create()
         }
-            .debug("🎧음악조회🎧")
+//            .debug("🎧음악조회🎧")
         
         return result
                 

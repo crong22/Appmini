@@ -46,7 +46,7 @@ final class ListViewController : UIViewController {
     private func bind() {
         
         let input = ListViewModel.Input(searchBarButton: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty)
-        let output = viewModel.transform(inptut: input)
+        let output = viewModel.transform(input: input)
         
         output.musicList
             .bind(to: tableView.rx.items(cellIdentifier: ListTableViewCell.id, cellType: ListTableViewCell.self)) {(row, element,cell) in
@@ -56,7 +56,6 @@ final class ListViewController : UIViewController {
                 cell.albumView.kf.setImage(with: image)
                 cell.musicLabel.text = element.trackName
                 cell.artistLabel.text = element.artistName
-                print(element)
             }
             .disposed(by: disposeBag)
 
