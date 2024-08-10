@@ -7,15 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D830AC662C665BF200DA0C57 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830AC652C665BF200DA0C57 /* UI.swift */; };
+		D830AC682C66652900DA0C57 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830AC672C66652900DA0C57 /* ListViewModel.swift */; };
+		D830AC6B2C6667A100DA0C57 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D830AC6A2C6667A100DA0C57 /* Kingfisher */; };
 		D8BB4C282C661A430013A697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C272C661A430013A697 /* AppDelegate.swift */; };
 		D8BB4C2A2C661A430013A697 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C292C661A430013A697 /* SceneDelegate.swift */; };
 		D8BB4C2C2C661A430013A697 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C2B2C661A430013A697 /* ViewController.swift */; };
 		D8BB4C2F2C661A430013A697 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D8BB4C2E2C661A430013A697 /* Base */; };
 		D8BB4C312C661A450013A697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8BB4C302C661A450013A697 /* Assets.xcassets */; };
 		D8BB4C342C661A450013A697 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D8BB4C332C661A450013A697 /* Base */; };
+		D8BB4C3D2C661A690013A697 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C3C2C661A690013A697 /* SearchViewController.swift */; };
+		D8BB4C3F2C661A7C0013A697 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C3E2C661A7C0013A697 /* SearchViewModel.swift */; };
+		D8BB4C412C661A810013A697 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C402C661A810013A697 /* Search.swift */; };
+		D8BB4C432C661A950013A697 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C422C661A950013A697 /* SearchTableViewCell.swift */; };
+		D8BB4C492C661C8C0013A697 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D8BB4C482C661C8C0013A697 /* SnapKit */; };
+		D8BB4C4C2C661C9B0013A697 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = D8BB4C4B2C661C9B0013A697 /* RxCocoa */; };
+		D8BB4C4E2C661C9B0013A697 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D8BB4C4D2C661C9B0013A697 /* RxSwift */; };
+		D8BB4C512C661E1B0013A697 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C502C661E1B0013A697 /* TodayViewController.swift */; };
+		D8BB4C542C661E310013A697 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C532C661E310013A697 /* GameViewController.swift */; };
+		D8BB4C572C661E3C0013A697 /* APPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C562C661E3C0013A697 /* APPViewController.swift */; };
+		D8BB4C5A2C661E5A0013A697 /* ArcadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C592C661E5A0013A697 /* ArcadeViewController.swift */; };
+		D8BB4C5D2C66550B0013A697 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C5C2C66550B0013A697 /* ListViewController.swift */; };
+		D8BB4C602C6658A90013A697 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C5F2C6658A90013A697 /* NetworkManager.swift */; };
+		D8BB4C632C6659B40013A697 /* APP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C622C6659B40013A697 /* APP.swift */; };
+		D8BB4C652C665B240013A697 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C642C665B240013A697 /* ListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D830AC652C665BF200DA0C57 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		D830AC672C66652900DA0C57 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		D8BB4C242C661A430013A697 /* Appmini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appmini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BB4C272C661A430013A697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8BB4C292C661A430013A697 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +44,18 @@
 		D8BB4C302C661A450013A697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8BB4C332C661A450013A697 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8BB4C352C661A450013A697 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8BB4C3C2C661A690013A697 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D8BB4C3E2C661A7C0013A697 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		D8BB4C402C661A810013A697 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		D8BB4C422C661A950013A697 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		D8BB4C502C661E1B0013A697 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		D8BB4C532C661E310013A697 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D8BB4C562C661E3C0013A697 /* APPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPViewController.swift; sourceTree = "<group>"; };
+		D8BB4C592C661E5A0013A697 /* ArcadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeViewController.swift; sourceTree = "<group>"; };
+		D8BB4C5C2C66550B0013A697 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D8BB4C5F2C6658A90013A697 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D8BB4C622C6659B40013A697 /* APP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APP.swift; sourceTree = "<group>"; };
+		D8BB4C642C665B240013A697 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +63,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D830AC6B2C6667A100DA0C57 /* Kingfisher in Frameworks */,
+				D8BB4C4E2C661C9B0013A697 /* RxSwift in Frameworks */,
+				D8BB4C4C2C661C9B0013A697 /* RxCocoa in Frameworks */,
+				D8BB4C492C661C8C0013A697 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +92,15 @@
 		D8BB4C262C661A430013A697 /* Appmini */ = {
 			isa = PBXGroup;
 			children = (
+				D8BB4C5B2C6654FD0013A697 /* List */,
+				D8BB4C582C661E400013A697 /* Arcade */,
+				D8BB4C552C661E340013A697 /* APP */,
+				D8BB4C522C661E1F0013A697 /* Game */,
+				D8BB4C4F2C661E100013A697 /* Today */,
+				D8BB4C3B2C661A600013A697 /* Search */,
+				D8BB4C5E2C66588F0013A697 /* Network */,
+				D8BB4C612C6659910013A697 /* Result */,
+				D8BB4C662C665BA20013A697 /* UI */,
 				D8BB4C272C661A430013A697 /* AppDelegate.swift */,
 				D8BB4C292C661A430013A697 /* SceneDelegate.swift */,
 				D8BB4C2B2C661A430013A697 /* ViewController.swift */,
@@ -65,6 +110,83 @@
 				D8BB4C352C661A450013A697 /* Info.plist */,
 			);
 			path = Appmini;
+			sourceTree = "<group>";
+		};
+		D8BB4C3B2C661A600013A697 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D8BB4C3C2C661A690013A697 /* SearchViewController.swift */,
+				D8BB4C422C661A950013A697 /* SearchTableViewCell.swift */,
+				D8BB4C3E2C661A7C0013A697 /* SearchViewModel.swift */,
+				D8BB4C402C661A810013A697 /* Search.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		D8BB4C4F2C661E100013A697 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				D8BB4C502C661E1B0013A697 /* TodayViewController.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		D8BB4C522C661E1F0013A697 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				D8BB4C532C661E310013A697 /* GameViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		D8BB4C552C661E340013A697 /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				D8BB4C562C661E3C0013A697 /* APPViewController.swift */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
+		D8BB4C582C661E400013A697 /* Arcade */ = {
+			isa = PBXGroup;
+			children = (
+				D8BB4C592C661E5A0013A697 /* ArcadeViewController.swift */,
+			);
+			path = Arcade;
+			sourceTree = "<group>";
+		};
+		D8BB4C5B2C6654FD0013A697 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				D8BB4C5C2C66550B0013A697 /* ListViewController.swift */,
+				D8BB4C642C665B240013A697 /* ListTableViewCell.swift */,
+				D830AC672C66652900DA0C57 /* ListViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		D8BB4C5E2C66588F0013A697 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D8BB4C5F2C6658A90013A697 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D8BB4C612C6659910013A697 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				D8BB4C622C6659B40013A697 /* APP.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		D8BB4C662C665BA20013A697 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D830AC652C665BF200DA0C57 /* UI.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +205,12 @@
 			dependencies = (
 			);
 			name = Appmini;
+			packageProductDependencies = (
+				D8BB4C482C661C8C0013A697 /* SnapKit */,
+				D8BB4C4B2C661C9B0013A697 /* RxCocoa */,
+				D8BB4C4D2C661C9B0013A697 /* RxSwift */,
+				D830AC6A2C6667A100DA0C57 /* Kingfisher */,
+			);
 			productName = Appmini;
 			productReference = D8BB4C242C661A430013A697 /* Appmini.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +239,11 @@
 				Base,
 			);
 			mainGroup = D8BB4C1B2C661A430013A697;
+			packageReferences = (
+				D8BB4C472C661C8C0013A697 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D8BB4C4A2C661C9B0013A697 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				D830AC692C6667A100DA0C57 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = D8BB4C252C661A430013A697 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +271,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8BB4C542C661E310013A697 /* GameViewController.swift in Sources */,
+				D830AC662C665BF200DA0C57 /* UI.swift in Sources */,
+				D8BB4C652C665B240013A697 /* ListTableViewCell.swift in Sources */,
 				D8BB4C2C2C661A430013A697 /* ViewController.swift in Sources */,
+				D8BB4C3F2C661A7C0013A697 /* SearchViewModel.swift in Sources */,
+				D8BB4C512C661E1B0013A697 /* TodayViewController.swift in Sources */,
+				D8BB4C632C6659B40013A697 /* APP.swift in Sources */,
 				D8BB4C282C661A430013A697 /* AppDelegate.swift in Sources */,
+				D8BB4C412C661A810013A697 /* Search.swift in Sources */,
+				D8BB4C572C661E3C0013A697 /* APPViewController.swift in Sources */,
+				D8BB4C3D2C661A690013A697 /* SearchViewController.swift in Sources */,
+				D8BB4C5A2C661E5A0013A697 /* ArcadeViewController.swift in Sources */,
+				D8BB4C602C6658A90013A697 /* NetworkManager.swift in Sources */,
 				D8BB4C2A2C661A430013A697 /* SceneDelegate.swift in Sources */,
+				D8BB4C5D2C66550B0013A697 /* ListViewController.swift in Sources */,
+				D8BB4C432C661A950013A697 /* SearchTableViewCell.swift in Sources */,
+				D830AC682C66652900DA0C57 /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +444,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +454,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.Appmini;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -324,8 +476,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +486,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.Appmini;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -361,6 +518,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D830AC692C6667A100DA0C57 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+		D8BB4C472C661C8C0013A697 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		D8BB4C4A2C661C9B0013A697 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D830AC6A2C6667A100DA0C57 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D830AC692C6667A100DA0C57 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		D8BB4C482C661C8C0013A697 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8BB4C472C661C8C0013A697 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		D8BB4C4B2C661C9B0013A697 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8BB4C4A2C661C9B0013A697 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		D8BB4C4D2C661C9B0013A697 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8BB4C4A2C661C9B0013A697 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D8BB4C1C2C661A430013A697 /* Project object */;
 }
