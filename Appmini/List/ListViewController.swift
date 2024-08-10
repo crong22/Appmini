@@ -39,20 +39,14 @@ final class ListViewController : UIViewController {
         navigationItem.titleView = searchBar
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIView())
 
-        callRequest()
         configureUI()
         bind()
-    }
-    
-    private func callRequest() {
-        NetworkManager.shared.callRequest(item: text)
     }
     
     private func bind() {
         
         let input = ListViewModel.Input(searchBarButton: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty)
         let output = viewModel.transform(inptut: input)
-        
         
         output.musicList
             .bind(to: tableView.rx.items(cellIdentifier: ListTableViewCell.id, cellType: ListTableViewCell.self)) {(row, element,cell) in
@@ -65,6 +59,7 @@ final class ListViewController : UIViewController {
                 print(element)
             }
             .disposed(by: disposeBag)
+
     }
     
     private func configureUI() {

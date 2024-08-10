@@ -43,6 +43,7 @@ final class SearchViewController : UIViewController {
         backBarButtonItem.isEnabled = false
         self.navigationItem.backBarButtonItem = backBarButtonItem
     }
+
     
     private func bind() {
         
