@@ -10,6 +10,8 @@
 		D830AC662C665BF200DA0C57 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830AC652C665BF200DA0C57 /* UI.swift */; };
 		D830AC682C66652900DA0C57 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830AC672C66652900DA0C57 /* ListViewModel.swift */; };
 		D830AC6B2C6667A100DA0C57 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D830AC6A2C6667A100DA0C57 /* Kingfisher */; };
+		D830AC6E2C67F8AF00DA0C57 /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830AC6D2C67F8AF00DA0C57 /* TapBarController.swift */; };
+		D830AC702C67FAED00DA0C57 /* TapBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830AC6F2C67FAED00DA0C57 /* TapBar.swift */; };
 		D8BB4C282C661A430013A697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C272C661A430013A697 /* AppDelegate.swift */; };
 		D8BB4C2A2C661A430013A697 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C292C661A430013A697 /* SceneDelegate.swift */; };
 		D8BB4C2C2C661A430013A697 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C2B2C661A430013A697 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		D830AC652C665BF200DA0C57 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		D830AC672C66652900DA0C57 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		D830AC6D2C67F8AF00DA0C57 /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
+		D830AC6F2C67FAED00DA0C57 /* TapBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBar.swift; sourceTree = "<group>"; };
 		D8BB4C242C661A430013A697 /* Appmini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appmini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BB4C272C661A430013A697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8BB4C292C661A430013A697 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D830AC6C2C67F88F00DA0C57 /* TapBar */ = {
+			isa = PBXGroup;
+			children = (
+				D830AC6D2C67F8AF00DA0C57 /* TapBarController.swift */,
+				D830AC6F2C67FAED00DA0C57 /* TapBar.swift */,
+			);
+			path = TapBar;
+			sourceTree = "<group>";
+		};
 		D8BB4C1B2C661A430013A697 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +114,7 @@
 				D8BB4C5E2C66588F0013A697 /* Network */,
 				D8BB4C612C6659910013A697 /* Result */,
 				D8BB4C662C665BA20013A697 /* UI */,
+				D830AC6C2C67F88F00DA0C57 /* TapBar */,
 				D8BB4C272C661A430013A697 /* AppDelegate.swift */,
 				D8BB4C292C661A430013A697 /* SceneDelegate.swift */,
 				D8BB4C2B2C661A430013A697 /* ViewController.swift */,
@@ -280,10 +294,12 @@
 				D8BB4C632C6659B40013A697 /* APP.swift in Sources */,
 				D8BB4C282C661A430013A697 /* AppDelegate.swift in Sources */,
 				D8BB4C412C661A810013A697 /* Search.swift in Sources */,
+				D830AC702C67FAED00DA0C57 /* TapBar.swift in Sources */,
 				D8BB4C572C661E3C0013A697 /* APPViewController.swift in Sources */,
 				D8BB4C3D2C661A690013A697 /* SearchViewController.swift in Sources */,
 				D8BB4C5A2C661E5A0013A697 /* ArcadeViewController.swift in Sources */,
 				D8BB4C602C6658A90013A697 /* NetworkManager.swift in Sources */,
+				D830AC6E2C67F8AF00DA0C57 /* TapBarController.swift in Sources */,
 				D8BB4C2A2C661A430013A697 /* SceneDelegate.swift in Sources */,
 				D8BB4C5D2C66550B0013A697 /* ListViewController.swift in Sources */,
 				D8BB4C432C661A950013A697 /* SearchTableViewCell.swift in Sources */,

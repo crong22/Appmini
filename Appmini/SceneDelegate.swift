@@ -13,38 +13,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let scene = (scene as? UIWindowScene) else { return }
-
-        window = UIWindow(windowScene: scene)
+        guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let tabBarController = UITabBarController()
-
-        tabBarController.tabBar.unselectedItemTintColor = .gray
-        
-        let today = TodayViewController()
-        let todayvc = UINavigationController(rootViewController: today)
-        todayvc.tabBarItem = UITabBarItem(title: "투데이", image: UIImage(systemName: "book"), tag: 0)
-        
-        let game = GameViewController()
-        let gamevc = UINavigationController(rootViewController: game)
-        gamevc.tabBarItem = UITabBarItem(title: "게임", image: UIImage(systemName: "gamecontroller"), tag: 1)
-        
-        let app = APPViewController()
-        let appvc = UINavigationController(rootViewController: app)
-        appvc.tabBarItem = UITabBarItem(title: "앱", image: UIImage(systemName: "square.stack.fill"), tag: 2)
-        
-        let arcade = ArcadeViewController()
-        let arcadevc = UINavigationController(rootViewController: arcade)
-        arcadevc.tabBarItem = UITabBarItem(title: "아케이드", image: UIImage(systemName: "star"), tag: 3)
-        
-        let search = SearchViewController()
-        let searchvc = UINavigationController(rootViewController: search)
-        searchvc.tabBarItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass"), tag: 4)
-        
-        tabBarController.setViewControllers([todayvc, gamevc, appvc, arcadevc, searchvc ], animated: true)
-        
-        window?.rootViewController = tabBarController // storyboard에서 entrypoint
-        window?.makeKeyAndVisible()
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = TabBarController()
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

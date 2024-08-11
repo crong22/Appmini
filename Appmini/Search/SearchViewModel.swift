@@ -13,47 +13,53 @@ class SearchViewModel {
     
     let disposeBag = DisposeBag()
     
-//    var record = UserDefaults.standard.stringArray(forKey: "record")
-    
     var record : [String] = []
+    var recordList : [String] = []
     
     struct Input {
         let searchBarClick : ControlEvent<Void>
         let searchBarText : ControlProperty<String>
+        let recordText : BehaviorSubject<[String]>
     }
     
     struct Output {
         let searchBarClick : ControlEvent<Void>
         let recordList : BehaviorSubject<[String]>
+        let listRecord : BehaviorSubject<[String]>
     }
     
     func transform(input : Input) -> Output {
-
-//        if let record = record {
-            let searchList = BehaviorSubject(value: record)
-            
-            input.searchBarClick
-                .withLatestFrom(input.searchBarText)
-                .bind(with: self, onNext: { owner, text in
-                    owner.record.insert(text, at: 0)
-                    searchList.onNext(owner.record)
-                    print("🍒🍒🍒🍒 \(text)")
-                })
-                .disposed(by: disposeBag)
-            
-            return Output(searchBarClick: input.searchBarClick, recordList: searchList)
-//        }else {
-//            let record : [String] = []
-//            let searchList = BehaviorSubject(value: record)
-//            input.searchBarClick
-//                .withLatestFrom(input.searchBarText)
-//                .bind(with: self, onNext: { owner, text in
-//                    searchList.onNext([text])
-//                    print("🍒🍒🍒🍒 \(text)")
-//                })
-//                .disposed(by: disposeBag)
-//            
-//            return Output(searchBarClick: input.searchBarClick, recordList: searchList)
-//        }
+        
+        let searchList = BehaviorSubject(value: record)
+        let listRecord = BehaviorSubject(value: recordList)
+        
+        input.searchBarClick
+            .withLatestFrom(input.searchBarText)
+            .bind(with: self, onNext: { owner, text in
+                UserDefaults.standard.setValue(text, forKey: "text")
+                guard let value = UserDefaults.standard.string(forKey: "text") else { return }
+                print("value : \(value)")
+                owner.record.insert(value, at: 0)
+                UserDefaults.standard.setValue(owner.record, forKey: "textRecord")
+                
+                guard let textRecord = UserDefaults.standard.stringArray(forKey: "textRecord") else { return }
+                print("textRecord : \(textRecord)")
+                
+                searchList.onNext(textRecord)
+                
+            })
+            .disposed(by: disposeBag)
+        
+        input.recordText
+            .bind(with: self) { owner, text in
+                print("ttttttttext",text)
+                listRecord.onNext(text)
+            }
+            .disposed(by: disposeBag)
+        
+        
+        
+        return Output(searchBarClick: input.searchBarClick, recordList: searchList, listRecord: listRecord)
+        
     }
 }

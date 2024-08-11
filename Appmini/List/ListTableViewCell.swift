@@ -69,7 +69,7 @@ class ListTableViewCell : UITableViewCell {
         musicLabel.snp.makeConstraints { make in
             make.top.equalTo(contentView.safeAreaLayoutGuide).offset(17)
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(85)
-            make.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(55)
+            make.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(60)
             make.height.equalTo(35)
         }
         

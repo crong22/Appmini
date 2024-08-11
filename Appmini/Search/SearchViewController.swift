@@ -38,6 +38,9 @@ final class SearchViewController : UIViewController {
     // viewModel
     let viewModel = SearchViewModel()
     
+    //
+    var record : [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,11 +52,24 @@ final class SearchViewController : UIViewController {
         backBarButtonItem.isEnabled = false
         self.navigationItem.backBarButtonItem = backBarButtonItem
     }
-
+    
     
     private func bind() {
-        let input = SearchViewModel.Input(searchBarClick: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty)
+        guard let record = UserDefaults.standard.stringArray(forKey: "textRecord") else { return }
+        print("recordrecord",record)
+        let recordRx = BehaviorSubject(value: record)
+        print("recordRx", recordRx)
+        
+        let input = SearchViewModel.Input(searchBarClick: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty, recordText: recordRx)
         let output = viewModel.transform(input: input)
+        
+        // tableview 처음?
+//        output.listRecord
+//            .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.id, cellType: SearchTableViewCell.self)) {(row, element,cell) in
+//                print("element", element)
+//                cell.titleLabel.text = element
+//            }
+//            .disposed(by: disposeBag)
         
         output.searchBarClick
             .withLatestFrom(searchBar.rx.text.orEmpty)
@@ -72,7 +88,7 @@ final class SearchViewController : UIViewController {
                 cell.titleLabel.text = element
             }
             .disposed(by: disposeBag)
-
+        
     }
     
     private func configureUI() {
