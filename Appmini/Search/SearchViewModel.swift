@@ -9,8 +9,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SearchViewModel {
-    
+class SearchViewModel : BaseViewModel {
+
     let disposeBag = DisposeBag()
     
     var record : [String] = []
@@ -28,8 +28,7 @@ class SearchViewModel {
         let listRecord : BehaviorSubject<[String]>
     }
     
-    func transform(input : Input) -> Output {
-        
+    func tranform(input: Input) -> Output {
         let searchList = BehaviorSubject(value: record)
         let listRecord = BehaviorSubject(value: recordList)
         
@@ -60,6 +59,5 @@ class SearchViewModel {
         
         
         return Output(searchBarClick: input.searchBarClick, recordList: searchList, listRecord: listRecord)
-        
     }
 }

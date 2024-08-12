@@ -56,18 +56,16 @@ final class SearchViewController : UIViewController {
     
     private func bind() {
         guard let record = UserDefaults.standard.stringArray(forKey: "textRecord") else { return }
-        print("recordrecord",record)
+        print("textRecord저장된 값",record)
         let recordRx = BehaviorSubject(value: record)
         print("recordRx", recordRx)
         
         let input = SearchViewModel.Input(searchBarClick: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty, recordText: recordRx)
-        let output = viewModel.transform(input: input)
+        let output = viewModel.tranform(input: input)
         
-        // tableview 처음?
 //        output.listRecord
 //            .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.id, cellType: SearchTableViewCell.self)) {(row, element,cell) in
-//                print("element", element)
-//                cell.titleLabel.text = element
+//                cell.titleLabel.text = "222"
 //            }
 //            .disposed(by: disposeBag)
         

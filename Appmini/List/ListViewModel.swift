@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ListViewModel {
+class ListViewModel : BaseViewModel {
     
     let disposeBag = DisposeBag()
 
@@ -22,8 +22,8 @@ class ListViewModel {
         let searchBarButton : ControlEvent<Void>
         var musicList : Observable<[Result]>
     }
-    
-    func transform(input : Input) -> Output {
+
+    func tranform(input: Input) -> Output {
         let musicTotalList = PublishSubject<[Result]>()
         
         input.searchBarButton

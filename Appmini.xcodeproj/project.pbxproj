@@ -12,6 +12,7 @@
 		D830AC6B2C6667A100DA0C57 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D830AC6A2C6667A100DA0C57 /* Kingfisher */; };
 		D830AC6E2C67F8AF00DA0C57 /* TapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830AC6D2C67F8AF00DA0C57 /* TapBarController.swift */; };
 		D830AC702C67FAED00DA0C57 /* TapBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830AC6F2C67FAED00DA0C57 /* TapBar.swift */; };
+		D830AC7B2C69FCB100DA0C57 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830AC7A2C69FCB100DA0C57 /* BaseViewModel.swift */; };
 		D8BB4C282C661A430013A697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C272C661A430013A697 /* AppDelegate.swift */; };
 		D8BB4C2A2C661A430013A697 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C292C661A430013A697 /* SceneDelegate.swift */; };
 		D8BB4C2C2C661A430013A697 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB4C2B2C661A430013A697 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		D830AC672C66652900DA0C57 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		D830AC6D2C67F8AF00DA0C57 /* TapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarController.swift; sourceTree = "<group>"; };
 		D830AC6F2C67FAED00DA0C57 /* TapBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBar.swift; sourceTree = "<group>"; };
+		D830AC7A2C69FCB100DA0C57 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		D8BB4C242C661A430013A697 /* Appmini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appmini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BB4C272C661A430013A697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8BB4C292C661A430013A697 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 			path = TapBar;
 			sourceTree = "<group>";
 		};
+		D830AC792C69FCA900DA0C57 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D830AC7A2C69FCB100DA0C57 /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		D8BB4C1B2C661A430013A697 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		D8BB4C262C661A430013A697 /* Appmini */ = {
 			isa = PBXGroup;
 			children = (
+				D830AC792C69FCA900DA0C57 /* Base */,
 				D8BB4C5B2C6654FD0013A697 /* List */,
 				D8BB4C582C661E400013A697 /* Arcade */,
 				D8BB4C552C661E340013A697 /* APP */,
@@ -286,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8BB4C542C661E310013A697 /* GameViewController.swift in Sources */,
+				D830AC7B2C69FCB100DA0C57 /* BaseViewModel.swift in Sources */,
 				D830AC662C665BF200DA0C57 /* UI.swift in Sources */,
 				D8BB4C652C665B240013A697 /* ListTableViewCell.swift in Sources */,
 				D8BB4C2C2C661A430013A697 /* ViewController.swift in Sources */,

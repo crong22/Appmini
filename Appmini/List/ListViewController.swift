@@ -46,7 +46,7 @@ final class ListViewController : UIViewController {
     private func bind() {
         
         let input = ListViewModel.Input(searchBarButton: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty)
-        let output = viewModel.transform(input: input)
+        let output = viewModel.tranform(input: input)
         
         output.musicList
             .bind(to: tableView.rx.items(cellIdentifier: ListTableViewCell.id, cellType: ListTableViewCell.self)) {(row, element,cell) in
