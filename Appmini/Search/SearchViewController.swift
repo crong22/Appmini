@@ -54,9 +54,9 @@ final class SearchViewController : UIViewController {
     }
     
     private func bind() {
-        var record = UserDefaults.standard.stringArray(forKey: "textRecord") ?? []
+        let record = UserDefaults.standard.stringArray(forKey: "textRecord") ?? []
 
-        var recordRx = BehaviorSubject(value: record)
+        let recordRx = BehaviorSubject(value: record)
         print("record 🍏",record)
         print("recordRx 🍒", recordRx)
         
