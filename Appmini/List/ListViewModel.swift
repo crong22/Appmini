@@ -14,40 +14,17 @@ class ListViewModel : BaseViewModel {
     let disposeBag = DisposeBag()
 
     struct Input {
-        let searchBarButton : ControlEvent<Void>
-        let searchBarText : ControlProperty<String>
+        let recordText : BehaviorSubject<String>
     }
     
     struct Output {
-        let searchBarButton : ControlEvent<Void>
         var musicList : Observable<[Result]>
     }
 
     func tranform(input: Input) -> Output {
         let musicTotalList = PublishSubject<[Result]>()
-        
-        input.searchBarButton
-            .throttle(.seconds(1), scheduler: MainScheduler.instance)
-            .withLatestFrom(input.searchBarText)
-            .distinctUntilChanged()
-            .flatMap { value in
-                NetworkManager.shared.callRequest(item: value)
-                    .catch { error in
-                        return Observable<Music>.never()
-                    }
-            }
-            .subscribe(with: self) { owner, music in
-                musicTotalList.onNext(music.results)
-            } onError: { owner, error in
-                print("error : \(error)")
-            } onCompleted: { owner in
-                print("completed")
-            } onDisposed: { owenr in
-                print("disposed")
-            }
-            .disposed(by: disposeBag)
-        
-        input.searchBarText
+
+        input.recordText
             .take(1)
             .flatMap { value in
                 NetworkManager.shared.callRequest(item: value)
@@ -64,7 +41,7 @@ class ListViewModel : BaseViewModel {
             .disposed(by: disposeBag)
     
 
-        return Output(searchBarButton: input.searchBarButton, musicList: musicTotalList)
+        return Output(musicList: musicTotalList)
     }
 }
 

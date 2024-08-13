@@ -16,12 +16,12 @@ final class ListViewController : UIViewController {
     var text = ""
     
     // searchBar
-    let searchBar : UISearchBar = {
-        let bar = UISearchBar()
-        bar.placeholder = "Music"
-        bar.searchTextField.font = TextFont.searchFont
-        return bar
-    }()
+//    let searchBar : UISearchBar = {
+//        let bar = UISearchBar()
+//        bar.placeholder = "Music"
+//        bar.searchTextField.font = TextFont.searchFont
+//        return bar
+//    }()
     
     // tableView
     let tableView = UITableView()
@@ -35,17 +35,17 @@ final class ListViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 뒤로가기버튼삭제 및 searchBar
-        navigationItem.titleView = searchBar
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIView())
+//        navigationItem.titleView = searchBar
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIView())
 
         configureUI()
         bind()
     }
     
     private func bind() {
+        var recordRx = BehaviorSubject(value: text)
         
-        let input = ListViewModel.Input(searchBarButton: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty)
+        let input = ListViewModel.Input(recordText : recordRx)
         let output = viewModel.tranform(input: input)
         
         output.musicList

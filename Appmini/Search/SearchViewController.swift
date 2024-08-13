@@ -47,18 +47,18 @@ final class SearchViewController : UIViewController {
         configureUI()
         bind()
         
-        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        backBarButtonItem.tintColor = .white
-        backBarButtonItem.isEnabled = false
+        let backBarButtonItem = UIBarButtonItem(title: "BACK", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = .black
+        backBarButtonItem.isEnabled = true
         self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
-    
     private func bind() {
         var record = UserDefaults.standard.stringArray(forKey: "textRecord") ?? []
-        print("textRecord저장된 값",record)
-        let recordRx = BehaviorSubject(value: record)
-        print("recordRx", recordRx)
+
+        var recordRx = BehaviorSubject(value: record)
+        print("record 🍏",record)
+        print("recordRx 🍒", recordRx)
         
         let input = SearchViewModel.Input(searchBarClick: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty, recordText: recordRx)
         let output = viewModel.tranform(input: input)
@@ -70,7 +70,6 @@ final class SearchViewController : UIViewController {
                 print("searchBarClick 실행")
                 UserDefaults.standard.setValue(text, forKey: "record")
                 let vc = ListViewController()
-                vc.searchBar.text = text
                 vc.text = text
                 owner.navigationController?.pushViewController(vc, animated: true)
             }
@@ -80,15 +79,20 @@ final class SearchViewController : UIViewController {
         output.recordList
             .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.id, cellType: SearchTableViewCell.self)) {(row, element,cell) in
                 cell.titleLabel.text = element
+                print("recordList")
                 
-                cell.xmarkButton.rx.tap
-                    .bind(with: self, onNext: { owner, value in
-                        let removeList = record.remove(at: row)
-                        print(removeList)
-                        UserDefaults.standard.setValue(removeList, forKey: "textRecord")
-                        var recordRx = BehaviorSubject(value: UserDefaults.standard.stringArray(forKey: "textRecord"))
-                    })
-                    .disposed(by: self.disposeBag)
+//                cell.xmarkButton.rx.tap
+//                    .bind(with: self, onNext: { owner, value in
+//                        record = UserDefaults.standard.stringArray(forKey: "textRecord") ?? []
+//                        print("제거전리스트 \(record)")
+//                        record.remove(at: row)
+//                        print("😈",record, row)
+//                        
+//                        UserDefaults.standard.setValue(record, forKey: "textRecord")
+//                        recordRx = BehaviorSubject(value: UserDefaults.standard.stringArray(forKey: "textRecord") ?? [])
+//                        print("제거된리스트 : \(recordRx)")
+//                    })
+//                    .disposed(by: self.disposeBag)
             }
             .disposed(by: disposeBag)
         

@@ -47,6 +47,7 @@ class NetworkManager {
 //                    print("appData \(appData)")
                     observer.onNext(appData)
                     observer.onCompleted()
+                    print("🤡")
                 }else {
                     print("응답은 왔으나 디코딩 실패")
                     observer.onError(netError.unknownResponse)
