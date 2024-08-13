@@ -45,14 +45,14 @@ class SearchViewModel : BaseViewModel {
                 print("textRecord : \(textRecord)")
                 
                 searchList.onNext(textRecord)
-                
+                print("sea")
             })
             .disposed(by: disposeBag)
         
         input.recordText
             .bind(with: self) { owner, text in
                 print("ttttttttext",text)
-                listRecord.onNext(text)
+                searchList.onNext(text)
             }
             .disposed(by: disposeBag)
         

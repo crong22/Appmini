@@ -32,6 +32,9 @@ class ListViewModel : BaseViewModel {
             .distinctUntilChanged()
             .flatMap { value in
                 NetworkManager.shared.callRequest(item: value)
+                    .catch { error in
+                        return Observable<Music>.never()
+                    }
             }
             .subscribe(with: self) { owner, music in
                 musicTotalList.onNext(music.results)

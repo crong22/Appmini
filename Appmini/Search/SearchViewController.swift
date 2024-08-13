@@ -63,11 +63,6 @@ final class SearchViewController : UIViewController {
         let input = SearchViewModel.Input(searchBarClick: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty, recordText: recordRx)
         let output = viewModel.tranform(input: input)
         
-//        output.listRecord
-//            .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.id, cellType: SearchTableViewCell.self)) {(row, element,cell) in
-//                cell.titleLabel.text = "222"
-//            }
-//            .disposed(by: disposeBag)
         
         output.searchBarClick
             .withLatestFrom(searchBar.rx.text.orEmpty)
