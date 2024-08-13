@@ -79,6 +79,13 @@ final class SearchViewController : UIViewController {
         output.recordList
             .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.id, cellType: SearchTableViewCell.self)) {(row, element,cell) in
                 cell.titleLabel.text = element
+                
+//                cell.xmarkButton.rx.tap
+//                    .bind(with: self, onNext: { owner, value in
+//                        let removeList = owner.record.remove(at: row)
+//                        UserDefaults.standard.setValue(removeList, forKey: "textRecord")
+//                    })
+//                    .disposed(by: self.disposeBag)
             }
             .disposed(by: disposeBag)
         
