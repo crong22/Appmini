@@ -53,6 +53,7 @@ final class ListViewController : UIViewController {
                 guard let image = URL(string: element.artworkUrl100!) else {
                     return
                 }
+                self.navigationItem.title = self.text
                 cell.albumView.kf.setImage(with: image)
                 cell.musicLabel.text = element.trackName
                 cell.artistLabel.text = element.artistName

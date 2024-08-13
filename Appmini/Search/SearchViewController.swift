@@ -47,7 +47,7 @@ final class SearchViewController : UIViewController {
         configureUI()
         bind()
         
-        let backBarButtonItem = UIBarButtonItem(title: "BACK", style: .plain, target: self, action: nil)
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         backBarButtonItem.tintColor = .black
         backBarButtonItem.isEnabled = true
         self.navigationItem.backBarButtonItem = backBarButtonItem
@@ -80,19 +80,15 @@ final class SearchViewController : UIViewController {
             .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.id, cellType: SearchTableViewCell.self)) {(row, element,cell) in
                 cell.titleLabel.text = element
                 print("recordList")
-                
-//                cell.xmarkButton.rx.tap
-//                    .bind(with: self, onNext: { owner, value in
-//                        record = UserDefaults.standard.stringArray(forKey: "textRecord") ?? []
-//                        print("제거전리스트 \(record)")
-//                        record.remove(at: row)
-//                        print("😈",record, row)
-//                        
-//                        UserDefaults.standard.setValue(record, forKey: "textRecord")
-//                        recordRx = BehaviorSubject(value: UserDefaults.standard.stringArray(forKey: "textRecord") ?? [])
-//                        print("제거된리스트 : \(recordRx)")
-//                    })
-//                    .disposed(by: self.disposeBag)
+            }
+            .disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .bind(with: self) { owner, value in
+                print(record[value.row])
+                let vc = ListViewController()
+                vc.text = record[value.row]
+                owner.navigationController?.pushViewController(vc, animated: true)
             }
             .disposed(by: disposeBag)
         
