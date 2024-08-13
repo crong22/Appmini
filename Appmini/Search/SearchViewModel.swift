@@ -13,9 +13,6 @@ class SearchViewModel : BaseViewModel {
 
     let disposeBag = DisposeBag()
     
-    var record : [String] = []
-    var recordList : [String] = []
-    
     struct Input {
         let searchBarClick : ControlEvent<Void>
         let searchBarText : ControlProperty<String>
@@ -29,8 +26,8 @@ class SearchViewModel : BaseViewModel {
     }
     
     func tranform(input: Input) -> Output {
-        let searchList = BehaviorSubject(value: record)
-        let listRecord = UserDefaults.standard.stringArray(forKey: "textRecord")
+//        let searchList = BehaviorSubject(value: record)
+        var listRecord = UserDefaults.standard.stringArray(forKey: "textRecord") ?? []
         let listRecoerd = BehaviorSubject(value: listRecord)
         
             
@@ -42,8 +39,8 @@ class SearchViewModel : BaseViewModel {
                 UserDefaults.standard.setValue(text, forKey: "text")
                 guard let value = UserDefaults.standard.string(forKey: "text") else { return }
                 print("value : \(value)")
-                owner.record.insert(value, at: 0)
-                UserDefaults.standard.setValue(owner.record, forKey: "textRecord")
+                listRecord.insert(value, at: 0)
+                UserDefaults.standard.setValue(listRecord, forKey: "textRecord")
                 
                 guard let textRecord = UserDefaults.standard.stringArray(forKey: "textRecord") else { return }
                 print("textRecord : \(textRecord)")
@@ -56,12 +53,12 @@ class SearchViewModel : BaseViewModel {
         input.recordText
             .bind(with: self) { owner, text in
                 print("ttttttttext",text)
-                searchList.onNext(text)
+                listRecoerd.onNext(text)
             }
             .disposed(by: disposeBag)
         
         
         
-        return Output(searchBarClick: input.searchBarClick, recordList: searchList)
+        return Output(searchBarClick: input.searchBarClick, recordList: listRecoerd)
     }
 }

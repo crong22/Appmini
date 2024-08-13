@@ -55,10 +55,10 @@ final class SearchViewController : UIViewController {
     
     
     private func bind() {
-        guard let record = UserDefaults.standard.stringArray(forKey: "textRecord") else { return }
-//        print("textRecord저장된 값",record)
+        var record = UserDefaults.standard.stringArray(forKey: "textRecord") ?? []
+        print("textRecord저장된 값",record)
         let recordRx = BehaviorSubject(value: record)
-//        print("recordRx", recordRx)
+        print("recordRx", recordRx)
         
         let input = SearchViewModel.Input(searchBarClick: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty, recordText: recordRx)
         let output = viewModel.tranform(input: input)
@@ -67,6 +67,7 @@ final class SearchViewController : UIViewController {
         output.searchBarClick
             .withLatestFrom(searchBar.rx.text.orEmpty)
             .bind(with: self) { owner, text in
+                print("searchBarClick 실행")
                 UserDefaults.standard.setValue(text, forKey: "record")
                 let vc = ListViewController()
                 vc.searchBar.text = text
@@ -80,12 +81,14 @@ final class SearchViewController : UIViewController {
             .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.id, cellType: SearchTableViewCell.self)) {(row, element,cell) in
                 cell.titleLabel.text = element
                 
-//                cell.xmarkButton.rx.tap
-//                    .bind(with: self, onNext: { owner, value in
-//                        let removeList = owner.record.remove(at: row)
-//                        UserDefaults.standard.setValue(removeList, forKey: "textRecord")
-//                    })
-//                    .disposed(by: self.disposeBag)
+                cell.xmarkButton.rx.tap
+                    .bind(with: self, onNext: { owner, value in
+                        let removeList = record.remove(at: row)
+                        print(removeList)
+                        UserDefaults.standard.setValue(removeList, forKey: "textRecord")
+                        var recordRx = BehaviorSubject(value: UserDefaults.standard.stringArray(forKey: "textRecord"))
+                    })
+                    .disposed(by: self.disposeBag)
             }
             .disposed(by: disposeBag)
         
