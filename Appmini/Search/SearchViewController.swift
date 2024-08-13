@@ -56,9 +56,9 @@ final class SearchViewController : UIViewController {
     
     private func bind() {
         guard let record = UserDefaults.standard.stringArray(forKey: "textRecord") else { return }
-        print("textRecord저장된 값",record)
+//        print("textRecord저장된 값",record)
         let recordRx = BehaviorSubject(value: record)
-        print("recordRx", recordRx)
+//        print("recordRx", recordRx)
         
         let input = SearchViewModel.Input(searchBarClick: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty, recordText: recordRx)
         let output = viewModel.tranform(input: input)

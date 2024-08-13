@@ -30,8 +30,11 @@ class SearchViewModel : BaseViewModel {
     
     func tranform(input: Input) -> Output {
         let searchList = BehaviorSubject(value: record)
-//        let listRecord = BehaviorSubject(value: recordList)
-        let listRecoerd: BehaviorSubject<[String]> = .init(value: UserDefaults.standard.stringArray(forKey: "textRecord") ?? [])
+        let listRecord = UserDefaults.standard.stringArray(forKey: "textRecord")
+        let listRecoerd = BehaviorSubject(value: listRecord)
+        
+            
+
         
         input.searchBarClick
             .withLatestFrom(input.searchBarText)
@@ -50,12 +53,12 @@ class SearchViewModel : BaseViewModel {
             })
             .disposed(by: disposeBag)
         
-//        input.recordText
-//            .bind(with: self) { owner, text in
-//                print("ttttttttext",text)
-//                searchList.onNext(text)
-//            }
-//            .disposed(by: disposeBag)
+        input.recordText
+            .bind(with: self) { owner, text in
+                print("ttttttttext",text)
+                searchList.onNext(text)
+            }
+            .disposed(by: disposeBag)
         
         
         
