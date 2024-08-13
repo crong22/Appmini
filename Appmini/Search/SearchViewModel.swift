@@ -34,7 +34,16 @@ class SearchViewModel : BaseViewModel {
             .bind(with: self, onNext: { owner, text in
                 UserDefaults.standard.setValue(text, forKey: "text")
                 guard let value = UserDefaults.standard.string(forKey: "text") else { return }
-                print("value : \(value)")
+                
+                //중복 값 제거
+                if listRecord.count > 0 {
+                    for i in 0..<listRecord.count {
+                        if listRecord[i] == value {
+                            listRecord.remove(at: i)
+                        }
+                    }
+                }
+                
                 listRecord.insert(value, at: 0)
                 UserDefaults.standard.setValue(listRecord, forKey: "textRecord")
                 

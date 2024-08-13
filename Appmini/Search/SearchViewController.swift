@@ -60,6 +60,8 @@ final class SearchViewController : UIViewController {
         print("record 🍏",record)
         print("recordRx 🍒", recordRx)
         
+        var rowCell : [Int] = []
+        
         let input = SearchViewModel.Input(searchBarClick: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty, recordText: recordRx)
         let output = viewModel.tranform(input: input)
         
@@ -79,7 +81,6 @@ final class SearchViewController : UIViewController {
         output.recordList
             .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.id, cellType: SearchTableViewCell.self)) {(row, element,cell) in
                 cell.titleLabel.text = element
-                print("recordList")
             }
             .disposed(by: disposeBag)
         
