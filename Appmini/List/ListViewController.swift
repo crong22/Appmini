@@ -15,13 +15,7 @@ final class ListViewController : UIViewController {
     
     var text = ""
     
-    // searchBar
-//    let searchBar : UISearchBar = {
-//        let bar = UISearchBar()
-//        bar.placeholder = "Music"
-//        bar.searchTextField.font = TextFont.searchFont
-//        return bar
-//    }()
+
     
     // tableView
     let tableView = UITableView()

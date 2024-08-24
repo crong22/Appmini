@@ -27,7 +27,6 @@ class SearchViewModel : BaseViewModel {
     func tranform(input: Input) -> Output {
         var listRecord = UserDefaults.standard.stringArray(forKey: "textRecord") ?? []
         let listRecoerd = BehaviorSubject(value: listRecord)
-        
             
         input.searchBarClick
             .withLatestFrom(input.searchBarText)
@@ -48,7 +47,6 @@ class SearchViewModel : BaseViewModel {
                 UserDefaults.standard.setValue(listRecord, forKey: "textRecord")
                 
                 guard let textRecord = UserDefaults.standard.stringArray(forKey: "textRecord") else { return }
-                print("textRecord : \(textRecord)")
                 
                 listRecoerd.onNext(textRecord)
             })

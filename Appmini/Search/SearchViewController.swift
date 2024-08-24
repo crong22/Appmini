@@ -26,6 +26,8 @@ final class SearchViewController : UIViewController {
         let bar = UISearchBar()
         bar.placeholder = "Music"
         bar.searchTextField.font = TextFont.searchFont
+        bar.autocorrectionType = .no
+        bar.spellCheckingType = .no
         return bar
     }()
     
@@ -53,14 +55,17 @@ final class SearchViewController : UIViewController {
         self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        searchBar.text = ""
+//    }
+    
     private func bind() {
         let record = UserDefaults.standard.stringArray(forKey: "textRecord") ?? []
 
         let recordRx = BehaviorSubject(value: record)
         print("record 🍏",record)
         print("recordRx 🍒", recordRx)
-        
-        var rowCell : [Int] = []
         
         let input = SearchViewModel.Input(searchBarClick: searchBar.rx.searchButtonClicked, searchBarText: searchBar.rx.text.orEmpty, recordText: recordRx)
         let output = viewModel.tranform(input: input)
