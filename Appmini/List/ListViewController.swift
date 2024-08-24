@@ -15,8 +15,6 @@ final class ListViewController : UIViewController {
     
     var text = ""
     
-
-    
     // tableView
     let tableView = UITableView()
     
@@ -28,9 +26,6 @@ final class ListViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        navigationItem.titleView = searchBar
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIView())
 
         configureUI()
         bind()
